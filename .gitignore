@@ -24,5 +24,5 @@ testData.env.json
 EOF
 
 # to .gitignore
-aung_bar_lay_app/testData.env.json
+echo "testData.env.json" >> .gitignore
 
