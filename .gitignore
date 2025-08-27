@@ -1,0 +1,28 @@
+cat > .gitignore << 'EOF'
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+package-lock.json
+
+# Mac
+.DS_Store
+
+# Reports/outputs
+reports/
+allure-results/
+allure-report/
+
+# Env & secrets
+.env
+*.env
+testData.env.json
+
+# IDE
+.vscode/
+.idea/
+EOF
+
+# to .gitignore
+aung_bar_lay_app/testData.env.json
+
