@@ -11,6 +11,9 @@ class LoginPage{
         popUp:() => $('//android.widget.ImageView[@content-desc]'),
         buyTicketBtn: () => $('android=new UiSelector().className("android.widget.ImageView").instance(13)'),
         notiAllowBtn: () => $('id=com.android.permissioncontroller:id/permission_allow_button'),
+        wrongOTPerrorMsg: () => $('//android.view.View[contains(@content-desc,"Your OTP is wrong")]'),
+        timeElements: () => $('//android.view.View[contains(@content-desc,"Code expires in:")]'),
+        resendOTPcode: () => $('//android.view.View[contains(@content-desc,"Resend code")]'),
     }
 
     message ={
@@ -60,8 +63,20 @@ class LoginPage{
     }
 
     async clickBuyTicketBtn() {
-        return this.elements.buyTicketBtn()
-;    }
+        return this.elements.buyTicketBtn();
+    }
+
+    async checkWrongOtpMsg() {
+        return this.elements.wrongOTPerrorMsg();
+    }
+
+    async checkTimerElements() {
+        return this.elements.timeElements();
+    }
+
+    async checkResendOTPcode() {
+        return this.elements.resendOTPcode();
+    }
 }
 
 module.exports = new LoginPage();
