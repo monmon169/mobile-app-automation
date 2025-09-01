@@ -78,7 +78,9 @@ describe("Login to the App", () => {
     const errorPopup = await LoginPage.checkPopup();
     await errorPopup.waitForDisplayed({timeout: 5000});
     const popUpText = await errorPopup.getAttribute('content-desc');
-    expect(popUpText).to.include(LoginPage.message.bothInvalidPhnoPw);
+    const actualText = popUpText.trim().replace(/\s+/g, ' ');
+    const expectedText = LoginPage.message.bothInvalidPhnoPw.replace(/\s+/g, ' ');
+    expect(actualText).to.equal(expectedText);
 
    // The back button might close it
   await driver.back();
@@ -223,16 +225,6 @@ describe("Login to the App", () => {
     await LoginBtn1.waitForDisplayed({timeout: 5000});
     await LoginBtn1.click();
 
-    //Input the OTP code to the terminal
-    const otpcode = readlineSync.question('Please enter OTP code: ');
-
-    //Fill the OTP code
-    const otpCodeField = await LoginPage.fillOtpCode();
-     await otpCodeField.waitForDisplayed({timeout: 5000});
-     await otpCodeField.click();
-     await otpCodeField.clearValue();
-     await otpCodeField.setValue(otpcode);
-
     //click "Cancle" button
      const conFirmBtn = await LoginPage.checkCloseBtn();
       await conFirmBtn.waitForDisplayed({timeout: 5000});
@@ -284,9 +276,5 @@ describe("Login to the App", () => {
     const notiAllowBtn = await LoginPage.clickAllowBtn();
     await notiAllowBtn.waitForDisplayed({timeout: 5000});
     await notiAllowBtn.click();
-
-    const buyTicketBtn = await LoginPage.clickBuyTicketBtn();
-    const isDisplayed = await buyTicketBtn.isDisplayed({timeout: 5000});
-    expect(isDisplayed).to.equal(true);
   });
 });

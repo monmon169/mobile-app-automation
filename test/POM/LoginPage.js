@@ -2,24 +2,28 @@ class LoginPage{
     elements = {
         phoneNumber : () => $('android=new UiSelector().className("android.widget.EditText").instance(0)'),
         passWord :() => $('android=new UiSelector().className("android.widget.EditText").instance(1)'),
-        logInbtn :() => $('(//android.view.View[@content-desc="Login"])[3]'),
+        logInbtn :() => $('(//android.view.View[@content-desc="LOGIN"])[1]'),
         otpField: () => $('android=new UiSelector().className("android.widget.EditText").index(0)'),
-        closeBtn: () => $('~Close'),
-        comfrimBtn: () => $('~Confirm'),
+        closeBtn: () => $('~CLOSE'),
+        comfrimBtn: () => $('~CONFIRM'),
         mYBtn: () => $('~MY'),
         eNBtn: () => $('~EN'),
         popUp:() => $('//android.widget.ImageView[@content-desc]'),
-        buyTicketBtn: () => $('android=new UiSelector().className("android.widget.ImageView").instance(13)'),
         notiAllowBtn: () => $('id=com.android.permissioncontroller:id/permission_allow_button'),
         wrongOTPerrorMsg: () => $('//android.view.View[contains(@content-desc,"Your OTP is wrong")]'),
         timeElements: () => $('//android.view.View[contains(@content-desc,"Code expires in:")]'),
         resendOTPcode: () => $('//android.view.View[contains(@content-desc,"Resend code")]'),
+        crossBtn: () => $('//android.widget.ImageView'),
+        buyTicketBtn: () => $('//android.widget.ImageView[@content-desc="Buy Ticket"]'),
+
+        
     }
 
     message ={
-        invalidPhnoValidPw : "Opps !\nYour account is not exist. Please create new account and sign in. Thank you\nClose",
-        bothInvalidPhnoPw : "Opps !\nInvalid phone number.\nClose",
-        validPhnoInvalidPw : "Opps !\nYour account or password is incorrect. Please try again.\nClose",
+        invalidPhnoValidPw : "Opps !\nYour account is not exist. Please create new account and sign in. Thank you\nCLOSE",
+        bothInvalidPhnoPw : "Opps ! Invalid phone number. CLOSE",
+        validPhnoInvalidPw : "Opps !\nYour account or password is incorrect. Please try again.\nCLOSE",
+        buyingTicket : "Buy Ticket"
     }
     
     async fillPhoneNumber(phoneNumber) {
@@ -62,10 +66,6 @@ class LoginPage{
         return this.elements.notiAllowBtn();
     }
 
-    async clickBuyTicketBtn() {
-        return this.elements.buyTicketBtn();
-    }
-
     async checkWrongOtpMsg() {
         return this.elements.wrongOTPerrorMsg();
     }
@@ -77,6 +77,14 @@ class LoginPage{
     async checkResendOTPcode() {
         return this.elements.resendOTPcode();
     }
+
+    async clickCrossBtn() {
+        return this.elements.crossBtn();
+    }
+
+   async checkBuyingTicketBtn() {
+        return this.elements.buyTicketBtn();
+   }
 }
 
 module.exports = new LoginPage();

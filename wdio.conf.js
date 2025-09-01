@@ -58,7 +58,7 @@ exports.config = {
   "platformName": "Android",
   "appium:platformVersion": "16",
   "appium:deviceName": "Pixel 4",
-  "appium:app": "/Users/bryan/Downloads/aungbarlay.apk",
+  "appium:app": "/Users/bryan/Downloads/app-uat-release (24).apk",
   "appium:automationName": "Uiautomator2",
   "appium:appPackage": "com.vihats.aungbarlay.uat",
   "appium:appActivity": "com.vihats.aungbarlay.MainActivity",
