@@ -13,11 +13,9 @@ class LoginPage{
         wrongOTPerrorMsg: () => $('//android.view.View[contains(@content-desc,"Your OTP is wrong")]'),
         timeElements: () => $('//android.view.View[contains(@content-desc,"Code expires in:")]'),
         resendOTPcode: () => $('//android.view.View[contains(@content-desc,"Resend code")]'),
-        crossBtn: () => $('//android.widget.ImageView'),
+        crossBtn: () => $('//android.widget.ImageView'),    
         buyTicketBtn: () => $('//android.widget.ImageView[@content-desc="Buy Ticket"]'),
-
-        
-    }
+ }
 
     message ={
         invalidPhnoValidPw : "Opps !\nYour account is not exist. Please create new account and sign in. Thank you\nCLOSE",

@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js",
-    "test:login": "wdio run wdio.conf.js --spec npx wdio run wdio.conf.js --spec ./test/specs/1-auth/LoginTest.js"
+    "test:login": "wdio run wdio.conf.js --spec npx wdio run wdio.conf.js --spec ./test/specs/1-auth/LoginTest.js",
+    "test:logout": "wdio run wdio.conf.js --spec npx wdio run wdio.conf.js --spec ./test/specs/1-auth/LogoutTest.js"
   },
   "keywords": [],
   "author": "",
