@@ -84,5 +84,4 @@ class LoginPage{
         return this.elements.buyTicketBtn();
    }
 }
-
 module.exports = new LoginPage();

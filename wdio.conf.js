@@ -48,7 +48,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -58,7 +58,7 @@ exports.config = {
   "platformName": "Android",
   "appium:platformVersion": "16",
   "appium:deviceName": "Pixel 4",
-  "appium:app": "/Users/bryan/Downloads/app-uat-release (24).apk",
+  "appium:app": "/Users/bryan/Downloads/app-uat-release (25).apk",
   "appium:automationName": "Uiautomator2",
   "appium:appPackage": "com.vihats.aungbarlay.uat",
   "appium:appActivity": "com.vihats.aungbarlay.MainActivity",
