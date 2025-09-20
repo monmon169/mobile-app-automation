@@ -14,6 +14,8 @@ class BuyingTktPage{
     buyTicketBtn: () => $('//android.view.View[@content-desc="BUY TICKET"]'),
     ticketAmount0MMK: () => $('//android.view.View[@content-desc="0 MMK"]'),
     ticketCount0: () => $('//android.view.View[@content-desc="0"]'),
+    backKeyAtBuyTicket: () => $('android=new UiSelector().className("android.view.View").instance(4)'),
+    rotateIcon: () => $$('android=new UiSelector().className("android.widget.ImageView")'),
     }
 
 
@@ -51,6 +53,22 @@ class BuyingTktPage{
 
     async checkTicketCount() {
         return this.randomlyElements.ticketCount0();
+    }
+
+    async clickBackKey() {
+        return this.randomlyElements.backKeyAtBuyTicket();
+    }
+
+    async clickRotateBtn() {
+        return this.randomlyElements.rotateIcon();
+    }
+    
+    async checkTicketsNumber() {
+        return this.randomlyElements.tickeNumber();
+    }
+
+    async clickRotateIcon() {
+        return this.randomlyElements.rotateIcon();
     }
 }
 
